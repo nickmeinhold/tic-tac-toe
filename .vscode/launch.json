@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Chrome against Live Server",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5500/",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true,
+      "runtimeArgs": ["--auto-open-devtools-for-tabs"]
+    },
+    {
+      "name": "Attach to Chrome (Live Server)",
+      "type": "chrome",
+      "request": "attach",
+      "webRoot": "${workspaceFolder}",
+      "urlFilter": "http://localhost:5500/*"
+    }
+  ]
+}
