@@ -4,15 +4,33 @@ const Gameboard = (function () {
   return {};
 })();
 
-let gameBaordDiv = document.getElementById("gameBoard");
+const gameboard = [];
 
-for (let i = 0; i < 9; i++) {
-  let gridItemButton = document.createElement("button");
-  gridItemButton.className = "grid-item";
+let gameBoardDiv = document.getElementById("gameBoard");
 
-  gridItemButton.addEventListener("click", () => {
-    console.log(i);
-  });
+function displayGameBoard() {
+  gameBoardDiv.innerHTML = "";
 
-  gameBaordDiv.appendChild(gridItemButton);
+  for (let i = 0; i < 9; i++) {
+    let gridItemButton = document.createElement("button");
+    gridItemButton.className = "grid-item";
+    gridItemButton.textContent = gameboard[i];
+
+    gridItemButton.addEventListener("click", () => {
+      if (gameboard[i] == null) {
+        gameboard[i] = "X";
+      }
+
+      displayGameBoard();
+    });
+
+    gameBoardDiv.appendChild(gridItemButton);
+  }
+}
+
+displayGameBoard();
+
+function checkForWinner() {
+  if (gameboard[0] == "X" && gameboard[1] == "X" && gameboard[3]) {
+  }
 }
